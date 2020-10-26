@@ -73,10 +73,14 @@ try:
 except ImportError:
     from md5 import new as md5_new
 
-
+from Crypto.Hash import BLAKE2b as b2
+    
 def getfilechecksumgeneric(algo):
     import hashlib
-    if hasattr(hashlib, algo):
+    if(algo == 'b2'):
+        def hasher():
+            return b2.new(digest_bits=512)
+    elif hasattr(hashlib, algo):
         hasher = getattr(hashlib, algo)
     else:
         def hasher():

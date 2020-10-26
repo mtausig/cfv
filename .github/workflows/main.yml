@@ -39,6 +39,7 @@ jobs:
          pip install twine
          pip install wheel
          pip install flake8
+         python setup.py install
          pip list
          
       - name: Compile code
