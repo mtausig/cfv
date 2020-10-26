@@ -50,6 +50,7 @@ setup(
         'Original Project': 'http://cfv.sourceforge.net/',
     },
     python_requires='>=2.7, <3',
+    install_requires= [ 'pycryptodome' ],
     packages=find_packages('lib'),
     package_dir={'': 'lib'},
     include_package_data=True,
